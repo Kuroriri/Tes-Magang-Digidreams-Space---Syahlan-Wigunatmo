@@ -5,7 +5,7 @@ Requirements
 - Postman Desktop
 
 1. Menjalankan API
-    - Clone repositori ini pada device anda
+    - Clone repository ini pada device anda
     -  Masuk ke direktori proyek dan buka terminal
     -  Buka docker desktop pada device anda
     -  Jalankan perintah "docker-compose up -d" untuk menjalankan PostgreSQL dengan Docker
