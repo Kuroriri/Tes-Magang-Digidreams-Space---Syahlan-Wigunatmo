@@ -1,0 +1,163 @@
+{
+    "info": {
+        "name": "User API - Golang Fiber",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+        {
+            "name": "Register User",
+            "request": {
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "url": {
+                    "raw": "http://localhost:3000/register",
+                    "host": [
+                        "http://localhost:3000"
+                    ],
+                    "path": [
+                        "register"
+                    ]
+                },
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n    \"name\": \"Sofia\",\n    \"email\": \"sofia@example.com\",\n    \"password\": \"password123\"\n}"
+                }
+            }
+        },
+        {
+            "name": "Login User",
+            "request": {
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "url": {
+                    "raw": "http://localhost:3000/login",
+                    "host": [
+                        "http://localhost:3000"
+                    ],
+                    "path": [
+                        "login"
+                    ]
+                },
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n    \"email\": \"sofia@example.com\",\n    \"password\": \"password123\"\n}"
+                }
+            }
+        },
+        {
+            "name": "Get All Users",
+            "request": {
+                "method": "GET",
+                "header": [
+                    {
+                        "key": "Authorization",
+                        "value": "Bearer {{jwt_token}}"
+                    }
+                ],
+                "url": {
+                    "raw": "http://localhost:3000/users",
+                    "host": [
+                        "http://localhost:3000"
+                    ],
+                    "path": [
+                        "users"
+                    ]
+                }
+            }
+        },
+        {
+            "name": "Get User By ID",
+            "request": {
+                "method": "GET",
+                "header": [
+                    {
+                        "key": "Authorization",
+                        "value": "Bearer {{jwt_token}}"
+                    }
+                ],
+                "url": {
+                    "raw": "http://localhost:3000/users/1",
+                    "host": [
+                        "http://localhost:3000"
+                    ],
+                    "path": [
+                        "users",
+                        "1"
+                    ]
+                }
+            }
+        },
+        {
+            "name": "Update User",
+            "request": {
+                "method": "PUT",
+                "header": [
+                    {
+                        "key": "Authorization",
+                        "value": "Bearer {{jwt_token}}"
+                    },
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "url": {
+                    "raw": "http://localhost:3000/users/1",
+                    "host": [
+                        "http://localhost:3000"
+                    ],
+                    "path": [
+                        "users",
+                        "1"
+                    ]
+                },
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n    \"name\": \"Sofia Updated\",\n    \"email\": \"sofia.updated@example.com\"\n}"
+                }
+            }
+        },
+        {
+            "name": "Delete User",
+            "request": {
+                "method": "DELETE",
+                "header": [
+                    {
+                        "key": "Authorization",
+                        "value": "Bearer {{admin_jwt_token}}"
+                    }
+                ],
+                "url": {
+                    "raw": "http://localhost:3000/users/1",
+                    "host": [
+                        "http://localhost:3000"
+                    ],
+                    "path": [
+                        "users",
+                        "1"
+                    ]
+                }
+            }
+        }
+    ],
+    "variable": [
+        {
+            "key": "jwt_token",
+            "value": ""
+        },
+        {
+            "key": "admin_jwt_token",
+            "value": ""
+        }
+    ]
+}
